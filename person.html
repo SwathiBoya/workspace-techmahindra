@@ -14,25 +14,6 @@
             <input name="address1" placeholder="Address"><br/><br/>
             <input type="button" value="Add Person" onclick ="addPerson(name1.value,id1.value,email1.value,phone1.value,address1.value)">
         </form>
-        <duv>
-            <table id="listTable">
-                <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Phone</th> 
-                    <th>Address</th>
-                </tr>
-                <tr id="listRow">
-                    <td id="pname1"></td>
-                    <td id="pid1"></td> 
-                    <td id="pemail1"></td>
-                    <td id="pphone1"></td>
-                    <td id="paddress1"></td>
-                </tr>
-            </table>
-        </duv>
-                
         <script>
             getPersons = function(){
                 var personList = [];
@@ -51,21 +32,6 @@
                 person.address1 = address1;
                 personList.push(person);
                 localStorage.setItem('persons',JSON.stringify(personList));
-
-                var personName = document.getElementById('pname1');
-                personName = document.write(person.name1);
-
-                var personId = document.getElementById('pid1');
-                personId1 = document.write(person.id1);
-
-                var personEmail = document.getElementById('pemail1');
-                personEmail = document.write(person.email1);
-
-                var personPhone = document.getElementById('pphone1');
-                personPhone = document.write(person.phone1);
-
-                var personAddress = document.getElementById('paddress1');
-                personAddress = document.write(person.address1);
                 
             }
             deleteLastPerson = function(){
@@ -84,25 +50,6 @@
                     for(var i=0;i<personList.length;i++){
                         var p = personList[i];
                         console.log(p.name1,p.email1,p.id1,p.phone1,p.address1);
-                        var tableList = document.getElementById("listTable");
-                        var tableRow = document.getElementById('listRow');
-
-                        var personName = document.getElementById('pname1');
-                        personName = document.write(p.name1);
-
-                        tableRow.appendChild(personName);
-
-                        var personId = document.getElementById('pid1');
-                        personId1 = document.write(p.id1);
-
-                        var personEmail = document.getElementById('pemail1');
-                        personEmail = document.write(p.email1);
-
-                        var personPhone = document.getElementById('pphone1');
-                        personPhone = document.write(p.phone1);
-
-                        var personAddress = document.getElementById('paddress1');
-                        personAddress = document.write(p.address1);
                         
                     }
                 }
