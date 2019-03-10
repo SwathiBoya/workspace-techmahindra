@@ -1,0 +1,19 @@
+<input type="text" placeholder="Id" [(ngModel)]="student.id" readonly><br><br>
+<input type="text" placeholder="First Name" [(ngModel)]="student.firstname"><br><br>
+<input type="text" placeholder="Last Name" [(ngModel)]="student.lastname"><br><br>
+<input type="text" placeholder="Email" [(ngModel)]="student.email"><br><br>
+<input type="text" placeholder="Phone" [(ngModel)]="student.phone"><br><br>
+
+<input type="button" value="Add Student" (click)= "addUpdateStudent()" style="margin: 10px;background-color: wheat;
+padding: 7px;">
+<input type="button" value="Delete All Student" (click) = "deleteAll()" style="margin: 10px;background-color: wheat;
+padding: 7px;"><br><br>
+
+<ul class="heroes">
+  <li  *ngFor="let s of students" >
+    {{s.id}} | {{s.firstname}} | {{s.lastname}} | {{s.email}} | {{s.phone}} |
+    <input type="button" value="Delete Student" (click)="deleteStudent(s.id)" style="margin: 10px;background-color: wheat;
+    padding: 7px;"> | <input type="button" value="Edit" (click)="editStudent(s)" style="margin: 10px;background-color: wheat;
+padding: 7px;">
+  </li>
+</ul>
